@@ -1,0 +1,8 @@
+{
+  "name": "Kashmiré Voyages",
+  "description": "Premium luxury travel agency and trip-planning platform for curated Kashmir journeys, houseboats, adventure expeditions and bespoke itineraries.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

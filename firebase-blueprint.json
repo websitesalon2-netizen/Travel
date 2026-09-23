@@ -1,0 +1,77 @@
+{
+  "entities": {
+    "Destination": {
+      "title": "Destination",
+      "description": "Travel circuit destination in Kashmir",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "kashmiriName": { "type": "string" },
+        "tagline": { "type": "string" },
+        "description": { "type": "string" },
+        "bannerImage": { "type": "string" },
+        "altitude": { "type": "string" },
+        "distanceFromSrinagar": { "type": "string" },
+        "driveTime": { "type": "string" },
+        "bestTime": { "type": "string" },
+        "recommendedStay": { "type": "string" },
+        "estimatedCost": { "type": "string" },
+        "difficulty": { "type": "string" },
+        "familyFriendly": { "type": "boolean" },
+        "coupleFriendly": { "type": "boolean" },
+        "adventureRating": { "type": "number" },
+        "snowStatus": { "type": "string" },
+        "isPopular": { "type": "boolean" },
+        "isOffbeat": { "type": "boolean" }
+      },
+      "required": ["id", "name"]
+    },
+    "SettingDoc": {
+      "title": "SettingDoc",
+      "description": "System or business configuration document",
+      "type": "object",
+      "properties": {
+        "updatedAt": { "type": "number" }
+      }
+    },
+    "Booking": {
+      "title": "Booking",
+      "description": "Traveler reservation record",
+      "type": "object",
+      "properties": {
+        "referenceNumber": { "type": "string" },
+        "customerName": { "type": "string" }
+      },
+      "required": ["referenceNumber", "customerName"]
+    },
+    "Lead": {
+      "title": "Lead",
+      "description": "Inbound inquiry or contact lead",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" }
+      },
+      "required": ["id", "name"]
+    }
+  },
+  "firestore": {
+    "/destinations/{destinationId}": {
+      "schema": "Destination",
+      "description": "Catalog of Kashmir destinations synchronized across all devices"
+    },
+    "/settings/{settingId}": {
+      "schema": "SettingDoc",
+      "description": "Business, payment, and mountain condition settings"
+    },
+    "/bookings/{bookingId}": {
+      "schema": "Booking",
+      "description": "Traveler booking records"
+    },
+    "/leads/{leadId}": {
+      "schema": "Lead",
+      "description": "Inquiry leads"
+    }
+  }
+}

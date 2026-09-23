@@ -1,0 +1,54 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Destinations are public read for travelers on all devices, with write capabilities for operations
+    match /destinations/{destinationId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // System and business settings (payment QR, mountain weather, business info)
+    match /settings/{settingId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Bookings & reservations
+    match /bookings/{bookingId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Inbound traveler inquiry leads
+    match /leads/{leadId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Website catalog managed from Manager Desk
+    match /packages/{packageId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    match /hotels/{hotelId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    match /experiences/{experienceId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Timeline items
+    match /timeline/{timelineId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
